@@ -10,4 +10,7 @@ class Solution:
             else:
                 end -= 1 
 
+    def question2():
+        pass
+
     
