@@ -29,6 +29,21 @@ def productExceptSelf(nums):
     return result
 
 def sortColors(nums):
+    start, cursor, end = 0, 0, len(nums) - 1
+    while cursor <= end:
+        if nums[cursor] == 0:
+            nums[start], nums[cursor] = nums[cursor], nums[start]
+            start += 1
+            cursor += 1
+        elif nums[cursor] == 1:
+            cursor += 1
+        elif nums[cursor] == 2:
+            nums[end], nums[cursor] = nums[cursor], nums[end]
+            end -= 1
+
+'''
+O(n^2) runtime; obsolete
+def sortColors(nums):
     cursor = 1
     while cursor < len(nums):
         i = cursor
@@ -36,6 +51,8 @@ def sortColors(nums):
             nums[i], nums[i-1] = nums[i-1], nums[i]
             i -= 1
         cursor += 1
+'''
+
 
 
 
